@@ -9,6 +9,7 @@ import {
 
 import Search from './components/Search';
 import ItemsList from './components/ItemsList';
+import ItemDetails from './components/ItemDetails'
 
 function App() {
   const [nasaCollection, setNasaCollection] = useState<any>(null);
@@ -27,9 +28,12 @@ function App() {
     <div className={styles.App}>
       <Router>
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Search handleSearch={handleSearch} />
             <ItemsList items={nasaCollection?.collection?.items} />
+          </Route>
+          <Route path='/asset/:id'>
+            <ItemDetails />
           </Route>
         </Switch>
       </Router>

@@ -9,6 +9,7 @@ type IMakeRequest = {
 
 // We could use process.env.REACT_APP_BASE_URL
 const baseURL = "https://images-api.nasa.gov"
+const baseJsonURL = "https://images-assets.nasa.gov"
 
 export function makeRequest<T = any>({ url, method = 'get', data, headers }: IMakeRequest) {
   return axios({
@@ -23,6 +24,27 @@ export function makeRequest<T = any>({ url, method = 'get', data, headers }: IMa
 export const getDataByQuery = async (query: string) => {
   try {
     const { data } = await makeRequest({ url: `/search?&media_type=image&q=${query}` })
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export const getAssetById = async (id: string) => {
+  try {
+    const { data } = await makeRequest({ url: `/asset/${id}` });
+    const items = data.collection.items;
+    console.log(items);
+    return items;
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export const getMetadataById = async (id: string) => {
+  try {
+    const { data } = await makeRequest({ url: `${baseJsonURL}/image/${id}/metadata.json` })
     console.log(data);
     return data;
   } catch (error) {
