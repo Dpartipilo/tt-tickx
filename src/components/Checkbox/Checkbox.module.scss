@@ -1,0 +1,30 @@
+.Checkbox{
+  display: flex;
+  position: relative;
+  margin-right: 10px;
+  input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  label{
+    margin-right: 5px;
+    .customCheckbox{
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 20px;
+      min-height: 20px;
+      border: 2px solid darkgray;
+      border-radius: 5px;
+      img{
+        max-width: 14px;
+        max-height: 14px;
+      }
+    }
+  }
+}
