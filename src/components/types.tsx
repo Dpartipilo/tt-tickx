@@ -37,3 +37,11 @@ export interface nasaCollectionProps {
   metadata: { total_hits: number };
   version: string;
 }
+
+export interface IItemDetails {
+  mediaTypes: string
+}
+
+export interface IAsset {
+  href: string
+}
