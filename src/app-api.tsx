@@ -21,9 +21,9 @@ export function makeRequest<T = any>({ url, method = 'get', data, headers }: IMa
   }) as AxiosPromise<T>;
 }
 
-export const getDataByQuery = async (query: string) => {
+export const getDataByQuery = async (query: string, mediaTypes: string = "image") => {
   try {
-    const { data } = await makeRequest({ url: `/search?&media_type=image&q=${query}` })
+    const { data } = await makeRequest({ url: `/search?&media_type=${mediaTypes}&q=${query}` })
     console.log(data);
     return data;
   } catch (error) {
@@ -42,9 +42,18 @@ export const getAssetById = async (id: string) => {
   }
 }
 
-export const getMetadataById = async (id: string) => {
+export const getImageMetadataById = async (id: string) => {
   try {
     const { data } = await makeRequest({ url: `${baseJsonURL}/image/${id}/metadata.json` })
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(error)
+  }
+}
+export const getAudioMetadataById = async (id: string) => {
+  try {
+    const { data } = await makeRequest({ url: `${baseJsonURL}/audio/${id}/metadata.json` })
     console.log(data);
     return data;
   } catch (error) {
