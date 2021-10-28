@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import styles from "./Checkbox.module.scss";
 import Tick from './tick.svg'
 
@@ -6,7 +6,7 @@ interface ICheckbox {
   id: string;
   name: string;
   label?: string;
-  handleOnChange: (evt: any) => void;
+  handleOnChange: (evt: ChangeEvent<HTMLInputElement> | React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 const Checkbox: React.FC<ICheckbox> = ({ id, name, label, handleOnChange }) => {
@@ -20,9 +20,15 @@ const Checkbox: React.FC<ICheckbox> = ({ id, name, label, handleOnChange }) => {
           name={name}
           id={id}
           checked={checked}
+          onKeyDown={(evt) => {
+            if (evt.code === "Space") {
+              setChecked(!checked);
+              handleOnChange(evt);
+            }
+          }}
           onChange={(evt) => {
-            setChecked(!checked)
-            handleOnChange(evt)
+            setChecked(!checked);
+            handleOnChange(evt);
           }} />
         <span className={styles.customCheckbox}>
           {checked && <img src={Tick} alt={`${name} search option`} />}
