@@ -13,11 +13,13 @@ import ItemDetails from './components/ItemDetails'
 
 function App() {
   const [nasaCollection, setNasaCollection] = useState<any>(null);
+  const [mediaTypes, setMediaTypes] = useState("");
 
-  const handleSearch = async (evt: FormEvent, searchValue: string) => {
+  const handleSearch = async (evt: FormEvent, searchValue: string, mediaTypes: string) => {
     evt.preventDefault();
+    setMediaTypes(mediaTypes)
     try {
-      const data = await getDataByQuery(searchValue);
+      const data = await getDataByQuery(searchValue, mediaTypes);
       setNasaCollection(data)
     } catch (error) {
       console.error(error)
@@ -32,8 +34,8 @@ function App() {
             <Search handleSearch={handleSearch} />
             <ItemsList items={nasaCollection?.collection?.items} />
           </Route>
-          <Route path='/asset/:id'>
-            <ItemDetails />
+          <Route path='/asset/:media/:id'>
+            <ItemDetails mediaTypes={mediaTypes} />
           </Route>
         </Switch>
       </Router>

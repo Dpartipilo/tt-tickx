@@ -1,13 +1,32 @@
 .ItemDetails{
-  padding: 20px;
-  
-  p{
-    margin-bottom: 60px;
+  .ImageItemDetails{
+    padding: 20px;
+    p{
+      margin-bottom: 60px;
+    }
+    img{
+      border-radius: 5px;
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+    }
   }
-  img{
-    border-radius: 5px;
-    height: auto;
+
+  .AudioItemDetails{
+    padding: 20px;
+    p{
+      margin-bottom: 60px;
+    }
+    img{
+      border-radius: 5px;
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .mediaPlayer{
+    display: flex;
+    justify-content: center;
     width: 100%;
-    object-fit: cover;
   }
 }
