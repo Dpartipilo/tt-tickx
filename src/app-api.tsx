@@ -21,7 +21,7 @@ export function makeRequest<T = any>({ url, method = 'get', data, headers }: IMa
   }) as AxiosPromise<T>;
 }
 
-export const getDataByQuery = async (query: string, mediaTypes: string = "image") => {
+export const getDataByQuery = async (query: string, mediaTypes: string) => {
   try {
     const { data } = await makeRequest({ url: `/search?&media_type=${mediaTypes}&q=${query}` })
     console.log(data);
