@@ -2,7 +2,10 @@ import React, { useEffect, useState, useCallback } from 'react'
 import styles from './ItemDetails.module.scss';
 import { useParams } from "react-router-dom";
 import { IItemDetails, IAsset } from '../types';
-import ReactPlayer from 'react-player';
+
+import AudioItemDetails from './AudioItemDetails';
+import ImageItemDetails from './ImageItemDetails';
+
 
 import { getAssetById, getImageMetadataById, getAudioMetadataById } from '../../app-api'
 
@@ -43,31 +46,6 @@ const ItemDetails: React.FC<IItemDetails> = ({ mediaTypes }) => {
       {media === "image" && <ImageItemDetails asset={asset} details={assetImageDetails} />}
 
       {media === "audio" && <AudioItemDetails asset={asset} details={assetAudioDetails} />}
-    </div>
-  )
-}
-
-const ImageItemDetails: React.FC<any> = ({ asset, details }) => {
-  return (
-    <div className={styles.ImageItemDetails}>
-      <h1>{details?.["XMP:Title"]}</h1>
-      <p>{details?.["XMP:Description"]}</p>
-
-      <img src={asset?.[1].href} alt={details?.["XMP:Description"]} />
-    </div>
-  )
-}
-
-const AudioItemDetails: React.FC<any> = ({ asset, details }) => {
-  return (
-    <div className={styles.ImageItemDetails}>
-      <h1>{details?.["AVAIL:Title"]}</h1>
-
-      <div className={styles.mediaPlayer}>
-        <ReactPlayer url={asset?.[3].href} controls={true} width="400px" height="50px" />
-      </div>
-
-      <p>{details?.["AVAIL:Description"]}</p>
     </div>
   )
 }
