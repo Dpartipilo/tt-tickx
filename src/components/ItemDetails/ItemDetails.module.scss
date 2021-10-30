@@ -1,30 +1,62 @@
 .ItemDetails{
   font-family: "Revamped";
-  background-color: rgb(112, 112, 112);
-  img{
-    border-radius: 5px;
-    height: auto;
-    width: 100%;
-    object-fit: cover;
-  }
-  .ImageItemDetails{
-    padding: 20px;
-    p{
-      font-family: "Roboto";
-      margin-bottom: 60px;
-    }
+  max-height: 100%;
+  margin: 0 20px;
 
+  h1{
+    color: white;
+    text-shadow: 1px 2px 7px #173d82;
+    margin-bottom: 60px
+  }
+  
+  .ImageItemDetails{
+    min-width: 100%;
+    background-color: #202020bd;
+    padding: 20px;
+    max-width: 600px;
+
+    .description{
+      margin: 0;
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+      background: #4b4b4bdc;
+      font-family: "Roboto";
+    }
+    
+    .imageContainer{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      padding: 20px;
+      width: 100%;
+      img{
+        border-radius: 5px;
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+        max-width: 500px;
+      }
+    }
   }
 
   .AudioItemDetails{
     padding: 20px;
-    p{
-      margin-bottom: 60px;
+    
+    .description{
+      margin: 0;
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+      background: #4b4b4bdc;
+      font-family: "Roboto";
     }
   }
   .mediaPlayer{
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-bottom: 30px;
   }
 }

@@ -16,7 +16,7 @@ const AudioItemDetails: React.FC<IAudioItemDetails> = ({ asset, details }) => {
         <ReactPlayer url={asset?.[3].href} controls={true} width="400px" height="50px" />
       </div>
 
-      <p>{details?.["AVAIL:Description"]}</p>
+      <p className={styles.description}>{details?.["AVAIL:Description"]}</p>
     </div>
   )
 }
