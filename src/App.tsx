@@ -17,7 +17,8 @@ function App() {
 
   const handleSearch = async (evt: FormEvent, searchValue: string, mediaTypes: string) => {
     evt.preventDefault();
-    setMediaTypes(mediaTypes)
+    setMediaTypes(mediaTypes);
+
     try {
       const data = await getDataByQuery(searchValue, mediaTypes);
       setNasaCollection(data)
@@ -32,7 +33,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Search handleSearch={handleSearch} />
-            <ItemsList items={nasaCollection?.collection?.items} />
+            <ItemsList items={nasaCollection?.collection?.items || []} />
           </Route>
           <Route path='/asset/:media/:id'>
             <ItemDetails mediaTypes={mediaTypes} />
