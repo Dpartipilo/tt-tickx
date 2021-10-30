@@ -2,10 +2,8 @@ import React from 'react'
 import styles from './Item.module.scss'
 import { IItem } from '../types'
 
-import {
-  Link,
-  useRouteMatch
-} from "react-router-dom";
+import ImageItem from './ImageItem';
+import AudioItem from './AudioItem';
 
 
 const renderMediaTypeElement = (props: any) => {
@@ -26,24 +24,6 @@ const Item: React.FC<IItem> = (props) => {
     <div className={styles.Item}>
       {renderMediaTypeElement(props)}
     </div>
-  )
-}
-
-const ImageItem: React.FC<IItem> = ({ data, links }) => {
-  const { url } = useRouteMatch();
-  return (
-    <Link to={`${url}asset/image/${data[0].nasa_id}`}>
-      <img src={links[0].href} alt={data[0].description} />
-    </Link>
-  )
-}
-
-const AudioItem: React.FC<IItem> = ({ data }) => {
-  const { url } = useRouteMatch();
-  return (
-    <Link to={`${url}asset/audio/${data[0].nasa_id}`}>
-      <p>{data[0].nasa_id}</p>
-    </Link>
   )
 }
 
