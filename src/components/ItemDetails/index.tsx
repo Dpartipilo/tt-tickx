@@ -62,11 +62,12 @@ const AudioItemDetails: React.FC<any> = ({ asset, details }) => {
   return (
     <div className={styles.ImageItemDetails}>
       <h1>{details?.["AVAIL:Title"]}</h1>
-      <p>{details?.["AVAIL:Description"]}</p>
 
       <div className={styles.mediaPlayer}>
         <ReactPlayer url={asset?.[3].href} controls={true} width="400px" height="50px" />
       </div>
+
+      <p>{details?.["AVAIL:Description"]}</p>
     </div>
   )
 }

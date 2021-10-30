@@ -1,27 +1,25 @@
 .ItemDetails{
+  font-family: "Revamped";
+  background-color: rgb(112, 112, 112);
+  img{
+    border-radius: 5px;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+  }
   .ImageItemDetails{
     padding: 20px;
     p{
+      font-family: "Roboto";
       margin-bottom: 60px;
     }
-    img{
-      border-radius: 5px;
-      height: auto;
-      width: 100%;
-      object-fit: cover;
-    }
+
   }
 
   .AudioItemDetails{
     padding: 20px;
     p{
       margin-bottom: 60px;
-    }
-    img{
-      border-radius: 5px;
-      height: auto;
-      width: 100%;
-      object-fit: cover;
     }
   }
   .mediaPlayer{
