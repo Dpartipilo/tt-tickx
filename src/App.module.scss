@@ -1,8 +1,8 @@
 .App {
+  position: relative;
   text-align: center;
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  padding: 40px 0;
   background: url("./styles/universe.jpg") no-repeat fixed center/cover;
 }
