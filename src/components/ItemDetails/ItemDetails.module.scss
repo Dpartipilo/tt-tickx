@@ -2,7 +2,7 @@
   font-family: "Revamped";
   max-height: 100%;
   margin: 0 20px;
-
+  padding-top: 80px;
   h1{
     color: white;
     text-shadow: 1px 2px 7px #173d82;
@@ -47,10 +47,12 @@
     .description{
       margin: 0;
       color: white;
-      padding: 20px;
+      padding: 40px;
       border-radius: 5px;
       background: #4b4b4bdc;
       font-family: "Roboto";
+      text-align: left;
+      font-size: 18px;
     }
   }
   .mediaPlayer{

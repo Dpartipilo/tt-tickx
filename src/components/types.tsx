@@ -38,10 +38,10 @@ export interface nasaCollectionProps {
   version: string;
 }
 
-export interface IItemDetails {
-  mediaTypes: string
-}
-
 export interface IAsset {
   href: string
+}
+
+export interface IHeader {
+  loading: boolean;
 }
