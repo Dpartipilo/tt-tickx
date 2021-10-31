@@ -9,10 +9,11 @@ import {
 
 import Search from './components/Search';
 import ItemsList from './components/ItemsList';
-import ItemDetails from './components/ItemDetails'
-import Header from './components/Header'
+import ItemDetails from './components/ItemDetails';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-import { IAsset } from "./components/types"
+import { IAsset } from "./components/types";
 
 import { getAssetById, getImageMetadataById, getAudioMetadataById } from './app-api'
 
@@ -74,6 +75,7 @@ function App() {
           <ItemDetails asset={asset} assetImageDetails={assetImageDetails} assetAudioDetails={assetAudioDetails} getAssetDetails={getAssetDetails} />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }
