@@ -13,7 +13,7 @@
     background: #c2c2c2ab;
     border-radius: 5px;
     width: 50%;
-    height: 30%;
+    height: auto;
 
     h1{
       margin-bottom: 60px;
@@ -40,7 +40,7 @@
         border: none;
         margin-right: 5px;
         height: 45px;
-        width: 50%;
+        width: 100%;
         padding: 0 10px;
         font-size: 16px;
         font-weight: bold;
@@ -75,5 +75,31 @@
     }
 
     
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Search{
+    .formContainer{
+      width: 90%;
+      
+      form{
+        width: 100%;
+
+        .inputContainer{
+          flex-direction: column;
+
+          input[type=text]{
+            margin-right: 0;
+            margin-bottom: 5px;
+          }
+        }
+
+        
+        button{
+          width: 100%;
+        }
+      }
+    }
   }
 }
