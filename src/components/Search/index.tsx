@@ -17,7 +17,6 @@ const Search: React.FC<ISearch> = ({ handleSearch }) => {
   }, [mediaTypes, searchValue])
 
   const handleOnChange = (evt: any) => {
-    console.log(evt.target.checked)
     let selectedMediaTypes = [...mediaTypes];
 
     if (evt.target.checked) {

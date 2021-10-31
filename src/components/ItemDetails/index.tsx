@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect } from 'react'
 import styles from './ItemDetails.module.scss';
 import { useParams } from "react-router-dom";
-import { IAsset } from '../types';
 
 import AudioItemDetails from './AudioItemDetails';
 import ImageItemDetails from './ImageItemDetails';
@@ -18,7 +17,7 @@ const ItemDetails: React.FC<IItemDetails> = ({ asset, assetImageDetails, assetAu
 
   useEffect(() => {
     getAssetDetails(id, media)
-  }, [id, getAssetDetails])
+  }, [id, media, getAssetDetails])
 
   return (
     <div className={styles.ItemDetails}>

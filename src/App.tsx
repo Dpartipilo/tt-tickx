@@ -3,8 +3,7 @@ import styles from './App.module.scss';
 import { getDataByQuery } from './app-api'
 import {
   Switch,
-  Route,
-  useParams
+  Route
 } from "react-router-dom";
 
 import Search from './components/Search';
@@ -18,7 +17,6 @@ import { IAsset } from "./components/types";
 import { getAssetById, getImageMetadataById, getAudioMetadataById } from './app-api'
 
 function App() {
-  const { id, media } = useParams<{ id: string, media: string }>();
   const [nasaCollection, setNasaCollection] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [asset, setAsset] = useState<IAsset[] | null>(null);
@@ -59,7 +57,7 @@ function App() {
     } finally {
       setLoading(false);
     }
-  }, [id, media])
+  }, [])
 
 
   return (
