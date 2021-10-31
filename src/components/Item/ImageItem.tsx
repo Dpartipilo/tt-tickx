@@ -11,4 +11,4 @@ const ImageItem: React.FC<IItem> = ({ data, links }) => {
   )
 }
 
-export default ImageItem
+export default ImageItem;
