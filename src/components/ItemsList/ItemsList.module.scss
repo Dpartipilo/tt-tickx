@@ -1,0 +1,29 @@
+.ItemsList{
+  margin: 0 40px;
+  padding: 10px 30px;
+  background-color: #202020bd;
+  max-width: 100%;
+  border-radius: 5px;
+  .itemsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  h2{
+    color: white;
+    font-family: "Revamped";
+    text-align: left;
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .ItemsList{
+    margin: 10px;
+    padding: 10px;
+
+    .itemsContainer{
+      padding: 0;
+    }
+  }
+}
