@@ -61,4 +61,14 @@ npm test / yarn test
 
 ## Acknowledgments
 
-Thank you for the opportunity to do this tech test, I really enjoyed it and I would have loved to have more time to develop it further.
+Thank you for the opportunity to do this tech test, I really hope you can fine some value on it. I enjoyed it and I would have loved to have more time to develop it further and better.
+
+## Further development
+
+- I would have unit tested all components as much as possible.
+- I would have made integration tests.
+- I would have tested API requests.
+- I think context or redux would have helped managing states better.
+- I would have added video items and implemented a media player to render them.
+- I would have done better types for typscript on some functions and components.
+- I would have implemented more accessibility features
