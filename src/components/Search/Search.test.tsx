@@ -28,5 +28,5 @@ test('It should allow letters to be inputted', () => {
   const searchInput: any = screen.getByRole('textbox');
   expect(searchInput.value).toBe('') // empty before
   fireEvent.change(searchInput, { target: { value: 'Moon' } })
-  expect(searchInput.value).toBe('Moon') //empty after
+  expect(searchInput.value).toBe('Moon') //value after
 })
