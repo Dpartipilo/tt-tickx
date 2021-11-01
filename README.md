@@ -65,10 +65,11 @@ Thank you for the opportunity to do this tech test, I really hope you can fine s
 
 ## Further development
 
-- I would have unit tested all components as much as possible.
-- I would have made integration tests.
-- I would have tested API requests.
+- Unit tested all components as much as possible.
+- Integration tests.
+- API request tests.
 - I think context or redux would have helped managing states better.
-- I would have added video items and implemented a media player to render them.
-- I would have done better types for typscript on some functions and components.
-- I would have implemented more accessibility features
+- Video items and media player.
+- Better types on some functions and components.
+- More accessibility features.
+- Error handlers.
